@@ -23,6 +23,9 @@ let package = Package(
         .target(
             name: "ICTMDBNetworkManagerKit",
             dependencies: ["Alamofire"],
+            resources: [
+                .process("Resources/Secret.plist")
+            ]
         ),
 
     ]
