@@ -95,7 +95,7 @@ public protocol NetworkRequest {
 - parameters: Query or body parameters
 
 ## Installation
-Add Alamofire to your project (via Swift Package Manager or CocoaPods)
+
 
 ```swift
 
