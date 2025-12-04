@@ -52,7 +52,7 @@ extension NetworkPath {
 // MARK: - RequestLanguage
 /// Defines the language preferences for API requests.
 /// Used to localize API responses (e.g., Turkish or English).
-public enum RequestLanguage {
+public enum RequestLanguage : Sendable {
     /// Turkish language option.
     case tr
     /// English language option.
