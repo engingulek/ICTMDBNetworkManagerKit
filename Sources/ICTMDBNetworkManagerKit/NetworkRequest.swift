@@ -10,7 +10,7 @@ import Foundation
 // MARK: - NetworkRequest Protocol
 /// A protocol that defines the blueprint for building API requests.
 /// Each request specifies its endpoint, HTTP method, headers, and parameters.
-public protocol NetworkRequest {
+public protocol NetworkRequest: Sendable {
     
     /// The expected response type of the request.
     /// It must conform to both `Decodable` (for JSON parsing) and `Sendable` (for concurrency safety).
@@ -57,7 +57,7 @@ public extension NetworkRequest {
         // MARK: Non-GET Request Body
         /// For non-GET methods (e.g., POST, PUT), encode parameters as JSON in the HTTP body.
         if method != .GET, let parameters = parameters {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
@@ -69,4 +69,5 @@ public extension NetworkRequest {
         return request
     }
 }
+
 
