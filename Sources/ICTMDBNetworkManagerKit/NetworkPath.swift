@@ -53,9 +53,9 @@ extension NetworkPath {
 /// Defines the language preferences for API requests.
 /// Used to localize API responses (e.g., Turkish or English).
 public enum RequestLanguage {
-    /// B2-C1 English: Turkish language option.
+    /// Turkish language option.
     case tr
-    /// B2-C1 English: English language option.
+    /// English language option.
     case en
 }
 
